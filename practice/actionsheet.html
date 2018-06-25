@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			button {
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="../js/mui.min.js"></script>
+		<center><button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" onclick="openSheet()">打开action sheet</button></center>
+		<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="sheet2">
+					<a href="#sheet1">菜单1</a>
+				</li>
+				<li class="mui-table-view-cell" id="sheet3">
+					<a href="#sheet1">菜单2</a>
+				</li>
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="cancel">
+					<a href="#sheet1"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			mui.init();
+
+			function openSheet() {
+				mui('#sheet1').popover('toggle');
+			}
+
+			//			var sheet2 = document.getElementById('sheet2');
+			//			sheet2.addEventListener('tap', () => {
+			//				console.log('菜单1');http://127.0.0.1:8020/HelloMui/practice/actionsheet.html#sheet1
+			//			});
+
+			mui('#sheet1').on('tap', '.mui-table-view-cell', function() {
+				var id = this.getAttribute('id');
+				console.log(id);
+				if(id === 'sheet2') {
+					console.log('点击了菜单1');
+					mui.toast('点击了菜单1', {
+						duration: 'short',
+						type: 'div'
+					});
+				} else if(id === 'sheet3') {
+					console.log('点击了菜单2');
+					mui.toast('点击了菜单2', {
+						duration: 'short',
+						type: 'div'
+					});
+				} else if(id === 'cancel'){
+					mui.toast('点击了取消', {
+						duration: 'short',
+						type: 'div'
+					});
+				}
+			});
+		
+		</script>
+	</body>
+
+</html>

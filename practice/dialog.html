@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<center><button id="warnDialogBtn" class="mui-btn mui-btn-blue" style="margin-top: 50px;">点击出警告弹框</button></center>
+		<center><button id="confirmDialogBtn" class="mui-btn mui-btn-blue" style="margin-top: 50px;">点击出确认框</button></center>
+		<center><button id="dialogBtn" class="mui-btn mui-btn-blue" style="margin-top: 50px;">点击出警告弹框</button></center>
+		<center><button id="dialogBtn" class="mui-btn mui-btn-blue" style="margin-top: 50px;">点击出警告弹框</button></center>
+		<script type="text/javascript">
+			document.getElementById('warnDialogBtn').addEventListener('click', () => {
+				mui.alert('Warning', 'Hint', 'Confirm', () => {}, 'div');
+			});
+
+			mui('body').on('click', '#confirmDialogBtn', function() {
+				console.log('hello');
+				mui.confirm('一旦确认，无法更改', '提示', ['确认', '啊？'], () => {}, 'div');
+			});
+		</script>
+	</body>
+
+</html>
