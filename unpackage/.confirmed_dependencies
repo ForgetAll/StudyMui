@@ -1,50 +1,120 @@
 {
-  "index.html": {
-    "refer": [
-      "index-menu.html",
-      "examples/guide.html",
-      "examples/info.html",
-      "examples/ajax.html",
-      "examples/card.html",
-      "examples/slider-table-default.html",
-      "examples/dialog.html",
-      "examples/imageviewer.html",
-      "examples/ad.html",
-      "examples/picker.html"
-    ],
-    "resources": []
-  },
-  "index-menu.html": {
-    "refer": [
-      "examples/pullrefresh_main.html",
-      "examples/switches.html"
-    ],
-    "resources": []
-  },
-  "examples/pullrefresh_main.html": {
-    "resources": [
-      "examples/pullrefresh_sub.html"
-    ],
-    "refer": [
-      "examples/pullrefresh_sub.html"
-    ]
-  },
-  "Hello.html": {
-    "refer": [
-      "practice/accordion.html",
-      "practice/actionsheet.html"
-    ],
-    "resources": []
-  },
-  "practice/accordion.html": {
-    "refer": [
-      "Hello.html"
-    ],
-    "resources": []
-  },
-  "practice/actionsheet.html": {
-    "refer": [
-      "Hello.html"
-    ]
-  }
+	"index.html": {
+		"refer": [
+			"index-menu.html",
+			"examples/guide.html",
+			"examples/info.html",
+			"examples/ajax.html",
+			"examples/card.html",
+			"examples/slider-table-default.html",
+			"examples/dialog.html",
+			"examples/imageviewer.html",
+			"examples/ad.html",
+			"examples/picker.html",
+			"examples/media-list.html",
+			"examples/nav.html",
+			"examples/offcanvas-drag-right-plus-main.html",
+			"examples/offcanvas-drag-right.html",
+			"examples/pagination.html",
+			"examples/lazyload-image.html",
+			"examples/login.html",
+			"examples/imageviewer-native.html",
+			"examples/indexed-list.html",
+			"examples/best-practices/list-to-detail/listview.html",
+			"examples/locker-dom.html",
+			"examples/indexed-list-select.html",
+			"examples/setting.html",
+			"examples/echarts.html",
+			"examples/im-chat.html",
+			"examples/tabbar.html",
+			"examples/typography.html",
+			"examples/tab-webview-main.html",
+			"examples/tab-with-viewpagerindicator.html",
+			"examples/tab-with-segmented-control.html",
+			"examples/tab-vertical-scroll.html",
+			"examples/switches.html",
+			"examples/range.html",
+			"examples/numbox.html",
+			"examples/slider-table-pagination.html",
+			"examples/badges.html",
+			"examples/accordion.html",
+			"examples/grid-default.html",
+			"examples/grid-pagination.html"
+		],
+		"resources": []
+	},
+	"index-menu.html": {
+		"refer": [
+			"examples/pullrefresh_main.html",
+			"examples/switches.html"
+		],
+		"resources": []
+	},
+	"examples/pullrefresh_main.html": {
+		"resources": [
+			"examples/pullrefresh_sub.html"
+		],
+		"refer": [
+			"examples/pullrefresh_sub.html"
+		]
+	},
+	"Hello.html": {
+		"refer": [
+			"practice/accordion.html",
+			"practice/actionsheet.html"
+		],
+		"resources": []
+	},
+	"practice/accordion.html": {
+		"refer": [
+			"Hello.html"
+		],
+		"resources": [
+			"fonts/mui.ttf"
+		]
+	},
+	"practice/actionsheet.html": {
+		"refer": [
+			"Hello.html"
+		],
+		"resources": []
+	},
+	"practice/dialog.html": {
+		"resources": [
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"hello.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"practice/accordion.html",
+			"practice/badge.html"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"examples/offcanvas-drag-right-plus-main.html": {
+		"refer": [
+			"examples/offcanvas-drag-right-plus-menu.html"
+		]
+	},
+	"examples/best-practices/list-to-detail/listview.html": {
+		"refer": [
+			"examples/best-practices/list-to-detail/detail.html"
+		]
+	},
+	"examples/tab-webview-main.html": {
+		"resources": [
+			"examples/tab-webview-subpage-about.html"
+		],
+		"refer": [
+			"examples/tab-webview-subpage-setting.html",
+			"examples/tab-webview-subpage-chat.html",
+			"examples/tab-webview-subpage-contact.html",
+			"examples/tab-webview-subpage-about.html"
+		]
+	}
 }

@@ -15,7 +15,7 @@
 		"72": "icon.png"
 	},
 	"fullscreen": false,
-	"launch_path": "Hello.html",/*必选，应用的入口页面，默认为根目录下的index.html；也可以是网络地址，网络地址必须以http://或https://开头*/
+	"launch_path": "hello.html",/*必选，应用的入口页面，默认为根目录下的index.html；也可以是网络地址，网络地址必须以http://或https://开头*/
 	"developer": {
 		"email": "",/*可选，开发者名称*/
 		"name": "",/*可选，开发者邮箱地址*/
@@ -29,14 +29,19 @@
 		"Speech": {
 			"description": "管理语音识别插件"
 		},
-		"Payment": {},
-		"Share": {},
-		"Push": {},
+
+
+
 		"Maps": {},
 		"OAuth": {},
 		"Contacts": {},
-		"Statistic": {},
-		"Messaging": {}
+
+		"Messaging": {},
+		"NativeUI": {
+			"description": "UI"
+		},
+		"Runtime": {},
+		"NativeObj": {}
 	},
 	"plus": {
 		"launchwebview": {
@@ -58,7 +63,7 @@
 		"runmode": "normal",/*两个值，liberate或normal，前者在应用安装时释放资源，后者不需要释放资源*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
-			"debug": "",/*可选，是否为debug模式，可取值：true表示debug模式运行，false表示release模式运行，默认值为false*/
+			"debug": true,/*可选，是否为debug模式，可取值：true表示debug模式运行，false表示release模式运行，默认值为false*/
 			"apple": {
 				"appid": "",/*iOS必选，苹果开发网站申请的appid，如io.dcloud.HelloMUI*/
 				"mobileprovision": "",/*iOS必选，打包配置文件*/
@@ -72,9 +77,44 @@
 				"keystore": "",/*Android必选，打包证书文件*/
 				"password": "",/*Android必选，打包证书密码*/
 				"aliasname": "",/*Android必选，打包证书别名*/
-				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.SEND_SMS\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.WRITE_SMS\"/>","<uses-permission android:name=\"android.permission.READ_SMS\"/>"]
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>",
+					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.SEND_SMS\"/>",
+					"<uses-permission android:name=\"android.permission.INTERNET\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SMS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_SMS\"/>"
+				]
 			},
-			"orientation": ["portrait-primary","portrait-secondary","landscape-primary","landscape-secondary"],/*必选*/
+			"orientation": [
+				"portrait-primary",
+				"portrait-secondary",
+				"landscape-primary",
+				"landscape-secondary"
+			],/*必选*/
 			"icons": {
 				"ios": {
 					"prerendered": "", /*必选，是否高亮显示*/
@@ -137,7 +177,9 @@
 				}
 			}
 		},
-		"schemeWhitelist":["market"]
+		"schemeWhitelist": [
+			"market"
+		]
 	},
 	"dependencies": {
 		"pages": {
@@ -159,7 +201,36 @@
 					"examples/dialog.html",
 					"examples/imageviewer.html",
 					"examples/ad.html",
-					"examples/picker.html"
+					"examples/picker.html",
+					"examples/media-list.html",
+					"examples/nav.html",
+					"examples/offcanvas-drag-right-plus-main.html",
+					"examples/offcanvas-drag-right.html",
+					"examples/pagination.html",
+					"examples/lazyload-image.html",
+					"examples/login.html",
+					"examples/imageviewer-native.html",
+					"examples/indexed-list.html",
+					"examples/best-practices/list-to-detail/listview.html",
+					"examples/locker-dom.html",
+					"examples/indexed-list-select.html",
+					"examples/setting.html",
+					"examples/echarts.html",
+					"examples/im-chat.html",
+					"examples/tabbar.html",
+					"examples/typography.html",
+					"examples/tab-webview-main.html",
+					"examples/tab-with-viewpagerindicator.html",
+					"examples/tab-with-segmented-control.html",
+					"examples/tab-vertical-scroll.html",
+					"examples/switches.html",
+					"examples/range.html",
+					"examples/numbox.html",
+					"examples/slider-table-pagination.html",
+					"examples/badges.html",
+					"examples/accordion.html",
+					"examples/grid-default.html",
+					"examples/grid-pagination.html"
 				],
 				"priority": 0
 			},
@@ -1015,7 +1086,9 @@
 				"priority": 0
 			},
 			"practice/accordion.html": {
-				"resources": [],
+				"resources": [
+					"fonts/mui.ttf"
+				],
 				"refer": [
 					"Hello.html"
 				],
@@ -1025,6 +1098,32 @@
 				"resources": [],
 				"refer": [
 					"Hello.html"
+				],
+				"priority": 0
+			},
+			"practice/dialog.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"hello.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"practice/accordion.html",
+					"practice/badge.html"
+				],
+				"refer": [
+					"index.html"
+				],
+				"priority": 0
+			},
+			"examples/best-practices/list-to-detail/listview.html": {
+				"resources": [],
+				"refer": [
+					"examples/best-practices/list-to-detail/detail.html"
 				],
 				"priority": 0
 			}
